@@ -1,0 +1,504 @@
+@prefix : <http://example.org/topology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/topology> .
+
+<http://example.org/topology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/topology#OWLObjectProperty_0ee0b271_d1f0_44fe_90f5_9a01caf87aab
+:OWLObjectProperty_0ee0b271_d1f0_44fe_90f5_9a01caf87aab rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :SUB_CONTROL_AREA ;
+                                                        rdfs:range :CONTROL_AREA ;
+                                                        rdfs:label "parentArea"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_0f128b1e_3b8b_4571_8ae3_6e3a51e21906
+:OWLObjectProperty_0f128b1e_3b8b_4571_8ae3_6e3a51e21906 rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdfs:domain :POWER_TRANSFORMER_END ;
+                                                        rdfs:range :POWER_TRANSFORMER ;
+                                                        rdfs:label "partOfPowerTransformer"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_2da1babf_41bd_4baa_b332_da1c5903b348
+:OWLObjectProperty_2da1babf_41bd_4baa_b332_da1c5903b348 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :SUB_GEOGRAPHICAL_AREA ;
+                                                        rdfs:range :GEOGRAPHICAL_AREA ;
+                                                        rdfs:label "parentGeoRegion"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_38bf08c7_5520_41c7_98e5_f18715f53c87
+:OWLObjectProperty_38bf08c7_5520_41c7_98e5_f18715f53c87 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :CONDUCTING_EQUIPMENT ;
+                                                        rdfs:range :EQUIPMENT_CONTAINER ;
+                                                        rdfs:label "isInEquipCont"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_41fbbdbc_0d9a_4cb7_b9d4_d494c2e9d3f4
+:OWLObjectProperty_41fbbdbc_0d9a_4cb7_b9d4_d494c2e9d3f4 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :SUBSTATION ;
+                                                        rdfs:range :SUB_CONTROL_AREA ;
+                                                        rdfs:label "isInSubCtrlArea"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_4e66079b_04b8_49a3_9dbf_f472c557f2b4
+:OWLObjectProperty_4e66079b_04b8_49a3_9dbf_f472c557f2b4 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :CONDUCTING_EQUIPMENT ;
+                                                        rdfs:range :BASE_VOLTAGE ;
+                                                        rdfs:label "hasBaseVoltage"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_6b979ac8_31e9_4c07_943e_74ca111320e7
+:OWLObjectProperty_6b979ac8_31e9_4c07_943e_74ca111320e7 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :SUBSTATION ;
+                                                        rdfs:range :SUB_GEOGRAPHICAL_AREA ;
+                                                        rdfs:label "isInSubGeoReg"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_92ae6966_4e93_41aa_8a45_c608828a9ed9
+:OWLObjectProperty_92ae6966_4e93_41aa_8a45_c608828a9ed9 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :CONNECTOR ;
+                                                        rdfs:range :CONDUCTING_EQUIPMENT ;
+                                                        rdfs:label "hasCondEquip"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_da00d301_15f8_4ac1_beb9_c6eac4f3b70f
+:OWLObjectProperty_da00d301_15f8_4ac1_beb9_c6eac4f3b70f rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :CONNECTION_HUB ;
+                                                        rdfs:range :EQUIPMENT_CONTAINER ;
+                                                        rdfs:label "connHubIsEqCont"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_e9023af5_3bad_498e_87aa_ed8626e32fcc
+:OWLObjectProperty_e9023af5_3bad_498e_87aa_ed8626e32fcc rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :VOLTAGE_LEVEL ;
+                                                        rdfs:range :BASE_VOLTAGE ;
+                                                        rdfs:label "hasBaseVoltage"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_ee64802d_c3b7_4601_8bb4_0ceab8d0f814
+:OWLObjectProperty_ee64802d_c3b7_4601_8bb4_0ceab8d0f814 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :CONNECTOR ;
+                                                        rdfs:range :CONNECTION_HUB ;
+                                                        rdfs:label "connectedToHub"@de .
+
+
+###  http://example.org/topology#OWLObjectProperty_f664c71a_83f3_493e_9e20_dec1e1bfc860
+:OWLObjectProperty_f664c71a_83f3_493e_9e20_dec1e1bfc860 rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain :VOLTAGE_LEVEL ;
+                                                        rdfs:range :SUBSTATION ;
+                                                        rdfs:label "isInSubstation"@de .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/topology#OWLDataProperty_02fd70fc_741b_405d_81e7_77a187ef62f9
+:OWLDataProperty_02fd70fc_741b_405d_81e7_77a187ef62f9 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "gch"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_062f3d56_50cd_4781_8ddb_908e17b11f90
+:OWLDataProperty_062f3d56_50cd_4781_8ddb_908e17b11f90 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "xGround"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_1a8ec877_9bb0_42f5_8764_5e2bf11f93ee
+:OWLDataProperty_1a8ec877_9bb0_42f5_8764_5e2bf11f93ee rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ,
+                                                                  :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "x"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_1b064cd7_621b_4e12_84da_a7b2c7c6df0e
+:OWLDataProperty_1b064cd7_621b_4e12_84da_a7b2c7c6df0e rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "g"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_285566df_6c92_4bd7_92bd_43a2113f7740
+:OWLDataProperty_285566df_6c92_4bd7_92bd_43a2113f7740 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :ENERGY_CONSUMER ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "qFixed"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_2cea2f3a_9883_496d_8bad_4e34faba0644
+:OWLDataProperty_2cea2f3a_9883_496d_8bad_4e34faba0644 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :BASE_VOLTAGE ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "nominalVoltageMeas"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_2dbb4182_9890_4739_bd98_4c32ab735bfd
+:OWLDataProperty_2dbb4182_9890_4739_bd98_4c32ab735bfd rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :ENERGY_CONSUMER ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "pFixedPct"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_312a900b_c05a_4a71_9794_b8b9576f213f
+:OWLDataProperty_312a900b_c05a_4a71_9794_b8b9576f213f rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "ratedKV"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_36ee1bc7_1e77_403f_a11f_d5a913bc37ff
+:OWLDataProperty_36ee1bc7_1e77_403f_a11f_d5a913bc37ff rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :CONTROL_AREA ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "netInterchange"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_372e6167_12d1_4df2_8134_180968f7f357
+:OWLDataProperty_372e6167_12d1_4df2_8134_180968f7f357 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :VOLTAGE_LEVEL ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "highVoltageLimit"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_3d5bf9b9_8e2e_4c7f_ac08_b1dd4239c682
+:OWLDataProperty_3d5bf9b9_8e2e_4c7f_ac08_b1dd4239c682 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :CONDUCTING_EQUIPMENT ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:label "conductingEquipmentTypeCd"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_3ecf7584_991c_41a5_b50d_8736b8f367bc
+:OWLDataProperty_3ecf7584_991c_41a5_b50d_8736b8f367bc rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                   owl:oneOf [ rdf:type rdf:List ;
+                                                                               rdf:first "D" ;
+                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                          rdf:first "Y" ;
+                                                                                          rdf:rest rdf:nil
+                                                                                        ]
+                                                                             ]
+                                                                 ] ;
+                                                      rdfs:label "connectionTypeCd"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_46b75c6f_2d69_4de2_9696_6cd3b63b0d95
+:OWLDataProperty_46b75c6f_2d69_4de2_9696_6cd3b63b0d95 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "ratedMVA"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_49c94221_eb3f_43ba_af36_875da254e75e
+:OWLDataProperty_49c94221_eb3f_43ba_af36_875da254e75e rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "b0ch"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_51c84c6c_bb14_4cd1_8e28_d00443408478
+:OWLDataProperty_51c84c6c_bb14_4cd1_8e28_d00443408478 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ,
+                                                                  :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "r"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_5b552974_2168_4693_b58b_064c3b24f609
+:OWLDataProperty_5b552974_2168_4693_b58b_064c3b24f609 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "grounded"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_65fff9a8_fbec_47d7_b92a_7033cb6c3258
+:OWLDataProperty_65fff9a8_fbec_47d7_b92a_7033cb6c3258 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :VOLTAGE_LEVEL ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "lowVoltageLimit"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_6841f363_f91a_4147_8bd8_b648a39f9466
+:OWLDataProperty_6841f363_f91a_4147_8bd8_b648a39f9466 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:label "transformerTypeCd"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_6a31a9ac_4ef0_4caa_b047_07096ad5f1d8
+:OWLDataProperty_6a31a9ac_4ef0_4caa_b047_07096ad5f1d8 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "g0ch"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_728e5d30_8368_4108_945e_6fab8f3f231b
+:OWLDataProperty_728e5d30_8368_4108_945e_6fab8f3f231b rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :ENERGY_CONSUMER ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "qFixedPct"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_78d531f1_6a89_4e21_bb43_e0878758c579
+:OWLDataProperty_78d531f1_6a89_4e21_bb43_e0878758c579 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :ENERGY_CONSUMER ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "pFixed"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_791eb715_0b34_4959_bad0_f8801df96975
+:OWLDataProperty_791eb715_0b34_4959_bad0_f8801df96975 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :BASE_VOLTAGE ;
+                                                      rdfs:range xsd:boolean ;
+                                                      rdfs:label "dcInd"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_8f0200c1_81f3_4066_b708_c5ea999735da
+:OWLDataProperty_8f0200c1_81f3_4066_b708_c5ea999735da rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "o"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_9ae4de8d_a7dd_4260_9a9c_72c22c2fbd7d
+:OWLDataProperty_9ae4de8d_a7dd_4260_9a9c_72c22c2fbd7d rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ,
+                                                                  :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "r0"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_b4680748_ff76_4ebb_bb1b_2cdfb1056bba
+:OWLDataProperty_b4680748_ff76_4ebb_bb1b_2cdfb1056bba rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "rGround"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_b7a3297b_81a2_4af2_835f_fde2e28d2cff
+:OWLDataProperty_b7a3297b_81a2_4af2_835f_fde2e28d2cff rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :CONDUCTING_EQUIPMENT ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:label "phaseCd"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_b7b045b0_dbd7_443e_8205_4742e5e3408a
+:OWLDataProperty_b7b045b0_dbd7_443e_8205_4742e5e3408a rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "b"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_b97ced91_1ddc_4e07_9961_b13d406af995
+:OWLDataProperty_b97ced91_1ddc_4e07_9961_b13d406af995 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain owl:Thing ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:label "Id"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_bc9ddb55_b083_4f02_b0a2_03adcce763c2
+:OWLDataProperty_bc9ddb55_b083_4f02_b0a2_03adcce763c2 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain owl:Thing ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:label "Name"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_bd9d16d4_68a9_4e64_a1c8_888cdcdb5b98
+:OWLDataProperty_bd9d16d4_68a9_4e64_a1c8_888cdcdb5b98 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "b0"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_ca6c3fc9_475c_4ecd_b554_8a65f98e1ca5
+:OWLDataProperty_ca6c3fc9_475c_4ecd_b554_8a65f98e1ca5 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "bch"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_d09e3e43_861c_4d1b_be6a_561e3214d23e
+:OWLDataProperty_d09e3e43_861c_4d1b_be6a_561e3214d23e rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                                                   owl:oneOf [ rdf:type rdf:List ;
+                                                                               rdf:first "Primary" ;
+                                                                               rdf:rest [ rdf:type rdf:List ;
+                                                                                          rdf:first "Secondary" ;
+                                                                                          rdf:rest rdf:nil
+                                                                                        ]
+                                                                             ]
+                                                                 ] ;
+                                                      rdfs:label "windingTypeCd"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_de815aee_3dee_4ac3_8daf_cede50652cdc
+:OWLDataProperty_de815aee_3dee_4ac3_8daf_cede50652cdc rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :CONTROL_AREA ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "pTolerance"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_de8914d8_329f_4a06_98a8_d97b23f824e0
+:OWLDataProperty_de8914d8_329f_4a06_98a8_d97b23f824e0 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :ENERGY_CONSUMER ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "pnom"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_e9f92cd4_199b_41dc_9f09_dddeb49c7eaf
+:OWLDataProperty_e9f92cd4_199b_41dc_9f09_dddeb49c7eaf rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :ENERGY_CONSUMER ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "qnom"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_f446d843_cf79_4a1a_a58f_c8395c02aff7
+:OWLDataProperty_f446d843_cf79_4a1a_a58f_c8395c02aff7 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "length"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_fc316903_8ec2_4419_ab46_647b8840629c
+:OWLDataProperty_fc316903_8ec2_4419_ab46_647b8840629c rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "emergencyMVA"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_fe76e728_944d_4396_bba1_101455aedf7f
+:OWLDataProperty_fe76e728_944d_4396_bba1_101455aedf7f rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :AC_LINE_SEGMENT ,
+                                                                  :POWER_TRANSFORMER_END ;
+                                                      rdfs:range xsd:decimal ;
+                                                      rdfs:label "x0"@de .
+
+
+###  http://example.org/topology#OWLDataProperty_ff8d1351_c722_415d_b75c_fc2adb089a44
+:OWLDataProperty_ff8d1351_c722_415d_b75c_fc2adb089a44 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain owl:Thing ;
+                                                      rdfs:range xsd:string ;
+                                                      rdfs:label "aliasName"@de .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/topology#AC_LINE_SEGMENT
+:AC_LINE_SEGMENT rdf:type owl:Class ;
+                 rdfs:subClassOf :CONDUCTING_EQUIPMENT ;
+                 rdfs:label "AC_LINE_SEGMENT" .
+
+
+###  http://example.org/topology#BASE_VOLTAGE
+:BASE_VOLTAGE rdf:type owl:Class ;
+              rdfs:label "BASE_VOLTAGE" .
+
+
+###  http://example.org/topology#BUSBAR_SECTION
+:BUSBAR_SECTION rdf:type owl:Class ;
+                rdfs:subClassOf :CONDUCTING_EQUIPMENT ;
+                rdfs:label "BUSBAR_SECTION" .
+
+
+###  http://example.org/topology#CONDUCTING_EQUIPMENT
+:CONDUCTING_EQUIPMENT rdf:type owl:Class ;
+                      rdfs:label "CONDUCTING_EQUIPMENT" .
+
+
+###  http://example.org/topology#CONNECTION_HUB
+:CONNECTION_HUB rdf:type owl:Class ;
+                rdfs:label "CONNECTION_HUB" .
+
+
+###  http://example.org/topology#CONNECTOR
+:CONNECTOR rdf:type owl:Class ;
+           rdfs:label "CONNECTOR" .
+
+
+###  http://example.org/topology#CONTROL_AREA
+:CONTROL_AREA rdf:type owl:Class ;
+              rdfs:label "CONTROL_AREA" .
+
+
+###  http://example.org/topology#ENERGY_CONSUMER
+:ENERGY_CONSUMER rdf:type owl:Class ;
+                 rdfs:subClassOf :CONDUCTING_EQUIPMENT ;
+                 rdfs:label "ENERGY_CONSUMER" .
+
+
+###  http://example.org/topology#EQUIPMENT_CONTAINER
+:EQUIPMENT_CONTAINER rdf:type owl:Class ;
+                     rdfs:label "EQUIPMENT_CONTAINER" .
+
+
+###  http://example.org/topology#GEOGRAPHICAL_AREA
+:GEOGRAPHICAL_AREA rdf:type owl:Class ;
+                   rdfs:label "GEOGRAPHICAL_AREA" .
+
+
+###  http://example.org/topology#HOST_CONTROL_AREA
+:HOST_CONTROL_AREA rdf:type owl:Class ;
+                   rdfs:label "HOST_CONTROL_AREA" .
+
+
+###  http://example.org/topology#LINE
+:LINE rdf:type owl:Class ;
+      rdfs:subClassOf :EQUIPMENT_CONTAINER ;
+      rdfs:label "LINE" .
+
+
+###  http://example.org/topology#LOCATION
+:LOCATION rdf:type owl:Class ;
+          rdfs:label "LOCATION" .
+
+
+###  http://example.org/topology#POWER_TRANSFORMER
+:POWER_TRANSFORMER rdf:type owl:Class ;
+                   rdfs:subClassOf :CONDUCTING_EQUIPMENT ;
+                   rdfs:label "POWER_TRANSFORMER" .
+
+
+###  http://example.org/topology#POWER_TRANSFORMER_END
+:POWER_TRANSFORMER_END rdf:type owl:Class ;
+                       rdfs:subClassOf :CONDUCTING_EQUIPMENT ;
+                       rdfs:label "POWER_TRANSFORMER_END" .
+
+
+###  http://example.org/topology#SUBSTATION
+:SUBSTATION rdf:type owl:Class ;
+            rdfs:subClassOf :EQUIPMENT_CONTAINER ;
+            rdfs:label "SUBSTATION" .
+
+
+###  http://example.org/topology#SUB_CONTROL_AREA
+:SUB_CONTROL_AREA rdf:type owl:Class ;
+                  rdfs:label "SUB_CONTROL_AREA" .
+
+
+###  http://example.org/topology#SUB_GEOGRAPHICAL_AREA
+:SUB_GEOGRAPHICAL_AREA rdf:type owl:Class ;
+                       rdfs:label "SUB_GEOGRAPHICAL_AREA" .
+
+
+###  http://example.org/topology#VOLTAGE_LEVEL
+:VOLTAGE_LEVEL rdf:type owl:Class ;
+               rdfs:subClassOf :EQUIPMENT_CONTAINER ;
+               rdfs:label "VOLTAGE_LEVEL" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
