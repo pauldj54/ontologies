@@ -14,22 +14,45 @@
 #    Object Properties
 #################################################################
 
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/hasAlarmType
+:hasAlarmType rdf:type owl:ObjectProperty ;
+              rdfs:domain :AlarmEvent ;
+              rdfs:range :AlarmType ;
+              rdfs:label "hasAlarmType" .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/hasEquipmentModel
+:hasEquipmentModel rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EquipmentInstance ;
+                   rdfs:range :Equipment ;
+                   rdfs:label "hasEquipmentModel" .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/hasLocation
+:hasLocation rdf:type owl:ObjectProperty ;
+             rdfs:domain :EquipmentInstance ;
+             rdfs:range :Location ;
+             rdfs:label "hasLocation" .
+
+
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/hasLocator
 :hasLocator rdf:type owl:ObjectProperty ;
-            rdfs:domain :Location ,
-                        :EquipmentInstance ;
+            rdfs:domain :EquipmentInstance ,
+                        :Location ;
             rdfs:range :Locator ;
             rdfs:label "hasLocator"@de .
 
 
-###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/isLocated
-:isLocated rdf:type owl:ObjectProperty ,
-                    owl:InverseFunctionalProperty ;
-           rdfs:domain :Switch ;
-           rdfs:range :Location ,
-                      :OWLClass_ffc1a336_55f8_4456_89c6_530fd50ba511 ;
-           rdfs:label "isInSwitchgear"@de ,
-                      "isLocated"@de .
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/hasSettings
+:hasSettings rdf:type owl:ObjectProperty ;
+             rdfs:domain :EquipmentInstance ;
+             rdfs:range :EquipmentInstanceSettings ;
+             rdfs:label "hasSettings" .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/hasVacuumInterrupter
+:hasVacuumInterrupter rdf:type owl:ObjectProperty ;
+                      rdfs:label "hasVacuumInterrupter" .
 
 
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/manufacteredBy
@@ -39,32 +62,11 @@
                 rdfs:label "manufacturedBy"@de .
 
 
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#hasAlarmType
-:hasAlarmType rdf:type owl:ObjectProperty ;
-              rdfs:domain :AlarmEvent ;
-              rdfs:range :AlarmType .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#hasEquipmentModel
-:hasEquipmentModel rdf:type owl:ObjectProperty ;
-                   rdfs:domain :EquipmentInstance ;
-                   rdfs:range :Equipment .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#hasLocation
-:hasLocation rdf:type owl:ObjectProperty ;
-             rdfs:domain :EquipmentInstance ;
-             rdfs:range :Location .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#hasSettings
-:hasSettings rdf:type owl:ObjectProperty ;
-             rdfs:domain :EquipmentInstance ;
-             rdfs:range :EquipmentInstanceSettings .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#hasVacuumInterrupter
-:hasVacuumInterrupter rdf:type owl:ObjectProperty .
+###  http://ontologies.siemens.com/sg-ldm/schema/assets#isInSwitchgear
+:isInSwitchgear rdf:type owl:ObjectProperty ;
+                rdfs:domain :Switch ;
+                rdfs:range :Switchgear ;
+                rdfs:label "isInSwitchgear" .
 
 
 #################################################################
@@ -171,6 +173,17 @@
                    rdfs:label "AirCircuitBreaker"@de .
 
 
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/AlarmEvent
+:AlarmEvent rdf:type owl:Class ;
+            rdfs:subClassOf :Event ;
+            rdfs:label "AlarmEvent" .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/AlarmType
+:AlarmType rdf:type owl:Class ;
+           rdfs:label "AlarmType" .
+
+
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/BaseVoltage
 :BaseVoltage rdf:type owl:Class ;
              rdfs:label "BaseVoltage"@de .
@@ -180,6 +193,11 @@
 :CircuitBreaker rdf:type owl:Class ;
                 rdfs:subClassOf :ProtectedSwitch ;
                 rdfs:label "CircuitBreaker"@de .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/CircuitBreakerType
+:CircuitBreakerType rdf:type owl:Class ;
+                    rdfs:label "CircuitBreakerType" .
 
 
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/Curve
@@ -197,6 +215,21 @@
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/Equipment
 :Equipment rdf:type owl:Class ;
            rdfs:label "Equipment"@de .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/EquipmentContainer
+:EquipmentContainer rdf:type owl:Class ;
+                    rdfs:label "EquipmentContainer"@de .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/EquipmentInstance
+:EquipmentInstance rdf:type owl:Class ;
+                   rdfs:label "EquipmentInstance" .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/EquipmentInstanceSettings
+:EquipmentInstanceSettings rdf:type owl:Class ;
+                           rdfs:label "EquipmentInstanceSettings" .
 
 
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/Event
@@ -250,17 +283,6 @@
               rdfs:label "Manufacturer"@de .
 
 
-###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/OWLClass_bb2ac772_04b6_405f_ad10_cde2450d2a9f
-:OWLClass_bb2ac772_04b6_405f_ad10_cde2450d2a9f rdf:type owl:Class ;
-                                               rdfs:label "EquipmentContainer"@de .
-
-
-###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/OWLClass_ffc1a336_55f8_4456_89c6_530fd50ba511
-:OWLClass_ffc1a336_55f8_4456_89c6_530fd50ba511 rdf:type owl:Class ;
-                                               rdfs:subClassOf :OWLClass_bb2ac772_04b6_405f_ad10_cde2450d2a9f ;
-                                               rdfs:label "Switchgear"@de .
-
-
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/OilCircuitBreaker
 :OilCircuitBreaker rdf:type owl:Class ;
                    rdfs:subClassOf :CircuitBreaker ;
@@ -302,45 +324,25 @@
         rdfs:label "Switch"@de .
 
 
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/Switchgear
+:Switchgear rdf:type owl:Class ;
+            rdfs:subClassOf :EquipmentContainer ;
+            rdfs:label "Switchgear"@de .
+
+
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/SwitchingEvent
+:SwitchingEvent rdf:type owl:Class ;
+                rdfs:subClassOf :Event ;
+                rdfs:label "SwitchingEvent" .
+
+
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/VacuumCircuitBreaker
 :VacuumCircuitBreaker rdf:type owl:Class ;
                       rdfs:subClassOf :CircuitBreaker ;
                       rdfs:label "VacuumCircuitBreaker"@de .
 
 
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#AlarmEvent
-:AlarmEvent rdf:type owl:Class ;
-            rdfs:subClassOf :Event ;
-            rdfs:label "AlarmEvent" .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#AlarmType
-:AlarmType rdf:type owl:Class ;
-           rdfs:label "AlarmType" .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#CircuitBreakerType
-:CircuitBreakerType rdf:type owl:Class ;
-                    rdfs:label "CircuitBreakerType" .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#EquipmentInstance
-:EquipmentInstance rdf:type owl:Class ;
-                   rdfs:label "EquipmentInstance" .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#EquipmentInstanceSettings
-:EquipmentInstanceSettings rdf:type owl:Class ;
-                           rdfs:label "EquipmentInstanceSettings" .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#SwitchingEvent
-:SwitchingEvent rdf:type owl:Class ;
-                rdfs:subClassOf :Event ;
-                rdfs:label "SwitchingEvent" .
-
-
-###  http://ontologies.siemens.com/sg-ldm/schema/assets#VacuumInterrupter
+###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/VacuumInterrupter
 :VacuumInterrupter rdf:type owl:Class ;
                    rdfs:subClassOf :Switch ;
                    rdfs:label "VacuumInterrupter" .
@@ -390,7 +392,7 @@
 
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/Switchgear_1
 :Switchgear_1 rdf:type owl:NamedIndividual ,
-                       :OWLClass_ffc1a336_55f8_4456_89c6_530fd50ba511 ;
+                       :Switchgear ;
               :Id "SG002"^^xsd:string ;
               :Name "Switchgear 2"^^xsd:string ;
               rdfs:label "switchgear_2"@de .
@@ -398,7 +400,7 @@
 
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/Switchgear_2
 :Switchgear_2 rdf:type owl:NamedIndividual ,
-                       :OWLClass_ffc1a336_55f8_4456_89c6_530fd50ba511 ;
+                       :Switchgear ;
               :Id "SG003"^^xsd:string ;
               :Name "Switchgear 3"^^xsd:string ;
               rdfs:label "switchgear_3"@de .
@@ -407,7 +409,6 @@
 ###  http://ontologies.siemens.com/omnetric/assets/ProtectionEquipment/0.1/VCB001
 :VCB001 rdf:type owl:NamedIndividual ,
                  :VacuumCircuitBreaker ;
-        :isLocated :Switchgear_2 ;
         :Breaker_Mech_Life 30000 ;
         :Id "VCB001"^^xsd:string ;
         :Ir 1250 ;
