@@ -1,0 +1,153 @@
+@prefix : <http://example.org/Weather_Generating_Units#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/Weather_Generating_Units> .
+
+<http://example.org/Weather_Generating_Units> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/Weather_Generating_Units#BUSINESS
+:BUSINESS rdf:type owl:Class ;
+          rdfs:subClassOf :ORGANIZATION ;
+          rdfs:label "BUSINESS" .
+
+
+###  http://example.org/Weather_Generating_Units#GEOSPATIAL
+:GEOSPATIAL rdf:type owl:Class ;
+            rdfs:subClassOf :LOCATOR ;
+            rdfs:label "GEOSPATIAL" .
+
+
+###  http://example.org/Weather_Generating_Units#LOCATION
+:LOCATION rdf:type owl:Class ;
+          rdfs:label "LOCATION" .
+
+
+###  http://example.org/Weather_Generating_Units#LOCATOR
+:LOCATOR rdf:type owl:Class ;
+         rdfs:label "LOCATOR" .
+
+
+###  http://example.org/Weather_Generating_Units#MARKETER
+:MARKETER rdf:type owl:Class ;
+          rdfs:subClassOf <http://example.org/Weather_Generating_Units#ELECTRICITY%20MARKET%20PARTICIPANT> ;
+          rdfs:label "MARKETER" .
+
+
+###  http://example.org/Weather_Generating_Units#ORGANIZATION
+:ORGANIZATION rdf:type owl:Class ;
+              rdfs:subClassOf :PARTY ;
+              rdfs:label "ORGANIZATION" .
+
+
+###  http://example.org/Weather_Generating_Units#PARTY
+:PARTY rdf:type owl:Class ;
+       rdfs:label "PARTY" .
+
+
+###  http://example.org/Weather_Generating_Units#DISTRIBUTION%20SYSTEM%20OPERATOR
+<http://example.org/Weather_Generating_Units#DISTRIBUTION%20SYSTEM%20OPERATOR> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://example.org/Weather_Generating_Units#SYSTEM%20OPERATOR> ;
+                                                                               rdfs:label "DISTRIBUTION SYSTEM OPERATOR" .
+
+
+###  http://example.org/Weather_Generating_Units#ELECTRICITY%20MARKET%20PARTICIPANT
+<http://example.org/Weather_Generating_Units#ELECTRICITY%20MARKET%20PARTICIPANT> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf :BUSINESS ;
+                                                                                 rdfs:label "ELECTRICITY MARKET PARTICIPANT" .
+
+
+###  http://example.org/Weather_Generating_Units#GENERATING%20UNIT
+<http://example.org/Weather_Generating_Units#GENERATING%20UNIT> rdf:type owl:Class ;
+                                                                rdfs:label "GENERATING UNIT" .
+
+
+###  http://example.org/Weather_Generating_Units#GEOSPATIAL%20AREA
+<http://example.org/Weather_Generating_Units#GEOSPATIAL%20AREA> rdf:type owl:Class ;
+                                                                rdfs:subClassOf :GEOSPATIAL ;
+                                                                rdfs:label "GEOSPATIAL AREA" .
+
+
+###  http://example.org/Weather_Generating_Units#GEOSPATIAL%20POINT
+<http://example.org/Weather_Generating_Units#GEOSPATIAL%20POINT> rdf:type owl:Class ;
+                                                                 rdfs:subClassOf :GEOSPATIAL ;
+                                                                 rdfs:label "GEOSPATIAL POINT" .
+
+
+###  http://example.org/Weather_Generating_Units#GEOSPATIAL%20AREA%20POINT
+<http://example.org/Weather_Generating_Units#GEOSPATIAL%20AREA%20POINT> rdf:type owl:Class ;
+                                                                        rdfs:label "GEOSPATIAL AREA POINT" .
+
+
+###  http://example.org/Weather_Generating_Units#LOCATION%20LOCATOR
+<http://example.org/Weather_Generating_Units#LOCATION%20LOCATOR> rdf:type owl:Class ;
+                                                                 rdfs:label "LOCATION LOCATOR" .
+
+
+###  http://example.org/Weather_Generating_Units#LOCATOR%20USAGE
+<http://example.org/Weather_Generating_Units#LOCATOR%20USAGE> rdf:type owl:Class ;
+                                                              rdfs:label "LOCATOR USAGE" .
+
+
+###  http://example.org/Weather_Generating_Units#OBSERVATION%20CLASS
+<http://example.org/Weather_Generating_Units#OBSERVATION%20CLASS> rdf:type owl:Class ;
+                                                                  rdfs:label "OBSERVATION CLASS" .
+
+
+###  http://example.org/Weather_Generating_Units#OBSERVATION%20SET
+<http://example.org/Weather_Generating_Units#OBSERVATION%20SET> rdf:type owl:Class ;
+                                                                rdfs:label "OBSERVATION SET" .
+
+
+###  http://example.org/Weather_Generating_Units#OBSERVATION%20TYPE
+<http://example.org/Weather_Generating_Units#OBSERVATION%20TYPE> rdf:type owl:Class ;
+                                                                 rdfs:label "OBSERVATION TYPE" .
+
+
+###  http://example.org/Weather_Generating_Units#POWER%20PLANT
+<http://example.org/Weather_Generating_Units#POWER%20PLANT> rdf:type owl:Class ;
+                                                            rdfs:subClassOf :LOCATION ;
+                                                            rdfs:label "POWER PLANT" .
+
+
+###  http://example.org/Weather_Generating_Units#SCHEDULING%20COORDINATOR
+<http://example.org/Weather_Generating_Units#SCHEDULING%20COORDINATOR> rdf:type owl:Class ;
+                                                                       rdfs:subClassOf <http://example.org/Weather_Generating_Units#ELECTRICITY%20MARKET%20PARTICIPANT> ;
+                                                                       rdfs:label "SCHEDULING COORDINATOR" .
+
+
+###  http://example.org/Weather_Generating_Units#SYSTEM%20OPERATOR
+<http://example.org/Weather_Generating_Units#SYSTEM%20OPERATOR> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <http://example.org/Weather_Generating_Units#ELECTRICITY%20MARKET%20PARTICIPANT> ;
+                                                                rdfs:label "SYSTEM OPERATOR" .
+
+
+###  http://example.org/Weather_Generating_Units#TRANSMISSION%20SYSTEM%20OPERATOR
+<http://example.org/Weather_Generating_Units#TRANSMISSION%20SYSTEM%20OPERATOR> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://example.org/Weather_Generating_Units#SYSTEM%20OPERATOR> ;
+                                                                               rdfs:label "TRANSMISSION SYSTEM OPERATOR" .
+
+
+###  http://example.org/Weather_Generating_Units#WEATHER%20FORECAST
+<http://example.org/Weather_Generating_Units#WEATHER%20FORECAST> rdf:type owl:Class ;
+                                                                 rdfs:label "WEATHER FORECAST" .
+
+
+###  http://example.org/Weather_Generating_Units#WIND%20PARK
+<http://example.org/Weather_Generating_Units#WIND%20PARK> rdf:type owl:Class ;
+                                                          rdfs:label "WIND PARK" .
+
+
+###  http://example.org/Weather_Generating_Units#WIND%20TURBINE
+<http://example.org/Weather_Generating_Units#WIND%20TURBINE> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://example.org/Weather_Generating_Units#GENERATING%20UNIT> ;
+                                                             rdfs:label "WIND TURBINE" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
